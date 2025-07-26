@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
+
 <body>
     <header>
         <a href="/">
@@ -23,7 +25,7 @@
                 <li>
                     <a href="#Produtos">Produtos</a>
                 </li>
-                <li>                    
+                <li>
                     <a href="#Perguntas-Frequentes">Perguntas Frequentes</a>
                 </li>
                 <li>
@@ -53,7 +55,7 @@
                     </div>
                 <li>
                     <figure>
-                        <img src="./assets/images/fone.jpeg" alt="xbox X SeriesHeadset Gamer SonicStorm 7.1">
+                        <img src="./assets/images/fone.jpeg" alt="Headset Gamer SonicStorm 7.1">
                         <figcaption>Headset Gamer SonicStorm 7.1</figcaption>
                     </figure>
                     <div>
@@ -148,8 +150,103 @@
         <div>
             <p>@2024 - Todos os direitos reservados</p>
         </div>
-
     </footer>
+
+    <div id="modal-1" class="modal" aria-hidden="true">
+
+        <!-- [2] -->
+        <div tabindex="-1" data-micromodal-close>
+
+            <!-- [3] -->
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+
+
+                <header>
+                    <h2 id="modal-1-title">
+                        Carrinho de Compras
+                    </h2>
+
+                    <!-- [4] -->
+                    <button aria-label="Close modal" data-micromodal-close></button>
+                </header>
+
+                <div id="modal-1-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produtos</th>
+                                <th>Descrição</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="./assets/images/xbox.jpeg" alt="Xbox X Series"></td>
+                                <td>Xbox X Series</td>
+                                <td>R$ 4.599,00</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>R$ 4.599,00</td>
+                                <td><button id="deletar">Deletar</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="./assets/images/fone.jpeg" alt="Headset Gamer SonicStorm 7.1"></td>
+                                <td>Headset Gamer SonicStorm 7.1</td>
+                                <td>R$ 349,90</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>R$ 349,90</td>
+                                <td><button id="deletar">Deletar</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="./assets/images/mouse.jpeg" alt="Mouse Gamer UltraClick RGB"></td>
+                                <td>Mouse Gamer UltraClick RGB</td>
+                                <td>R$ 189,00</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>R$ 189,00</td>
+                                <td><button id="deletar">Deletar</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="./assets/images/teclado.jpg" alt="Teclado Mecânico Red Switch Pro"></td>
+                                <td>Teclado Mecânico Red Switch Pro</td>
+                                <td>R$ 289,00</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>R$ 289,00</td>
+                                <td><button id="deletar">Deletar</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="./assets/images/monitor.jpg" alt="Monitor Gamer 27 165Hz 1ms"></td>
+                                <td>Monitor Gamer 27" 165Hz 1ms</td>
+                                <td>R$ 1.399,00</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>R$ 1.399,00</td>
+                                <td><button id="deletar">Deletar</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="./assets/images/notebook.jpg" alt="Notebook Gamer G-Fury i7 RTX 4060"></td>
+                                <td>Notebook Gamer G-Fury i7 RTX 4060</td>
+                                <td>R$ 6.899,00</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>R$ 6.899,00</td>
+                                <td><button id="deletar">Deletar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <span id="total-carrinho">Total: R$0,00</span>
+                        <button>Finalizar Compra</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js
+    "></script>
     <script src="js/index.js"></script>
 </body>
-</html> 
+
+</html>
