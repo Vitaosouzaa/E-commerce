@@ -1,0 +1,109 @@
+main{
+    grid-area: main;
+    padding: 1rem;
+
+}
+
+main section h2{
+    color: var(--neutral-color-light);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+}
+
+main .products ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main .products .product{
+    max-width: 368px;
+    border-radius: 14px;
+}
+
+main .products img{
+    width: 100%;
+    height: 334px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    display: block;
+    object-position: center;
+    object-fit: cover;
+}
+
+main .product figcaption{
+    background-color: var(--second-color);
+    color: var(--neutral-color-light);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 1.5rem 1.2rem;
+
+}
+
+main .information{
+    background-color: var(--second-color);
+    color: var(--neutral-color-light);
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1.5rem 1.5rem;
+    flex-direction: column;
+}
+
+main .information span{
+    color: var(--third-color);
+}
+
+main .information strong{
+    color: var(--third-color);
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+}
+
+main .information .price{
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-align: right;
+}
+
+main .information .add-to-cart{
+    background-color: var(--first-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--neutral-color-light);
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+main .information .add-to-cart:hover{
+    background-color: var(--color-hover);
+}
+
+@media(min-width: 769px){
+    main{
+        margin: 0 auto;
+    }
+
+    main .products .product{
+        min-width: 368px;
+    }
+
+    main .products ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+@media(min-width: 1170px){
+    main section{
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+}
+
