@@ -12,38 +12,48 @@
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
 
     
 </head>
 
 <body>
-    <header>
-        <a href="/">
-            <img src="assets/images/vitor_souza_logo_color_small.svg" alt="logo">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#Home">Home</a>
-                </li>
-                <li>
-                    <a href="#Sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#Produtos">Produtos</a>
-                </li>
-                <li>
-                    <a href="#Perguntas-Frequentes">Perguntas Frequentes</a>
-                </li>
-                <li>
-                    <a href="#Fale-Conosco">Fale Conosco</a>
-                </li>
-            </ul>
-        </nav>
-        <button>
-            <img src="assets/images/icone_carrinho.svg" alt="carrinho de compras">
-        </button>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="burger" for="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>    
+                <a class="logo" href="/">
+                    <img src="assets/images/vitor_souza_logo_color_small.svg" alt="logo">
+                </a>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li>
+                        <a href="#Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#Sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#Produtos">Produtos</a>
+                    </li>
+                    <li>
+                        <a href="#Perguntas-Frequentes">Perguntas Frequentes</a>
+                    </li>
+                    <li>
+                        <a href="#Fale-Conosco">Fale Conosco</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="cart-button" data-micromodal-trigger="modal-1 ">
+                <span>0</span>
+                <img src="assets/images/icone_carrinho.svg" alt="carrinho de compras">
+            </button>
+        </div>
     </header>
 
     <main>

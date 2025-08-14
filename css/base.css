@@ -1,6 +1,13 @@
+:root{
+    --primary-color: linear-gradient(90deg,  #747373, #424141, #3c3c3c, #747373);
+    --neutral-color-light: #fff;
+    --color-hover: #834de8;
+    --first-color: #6528D3;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(120deg,  #747373, #424141, #3c3c3c, #747373);
+    background-image: var(--primary-color);
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 
