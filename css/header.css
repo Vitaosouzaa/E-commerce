@@ -60,10 +60,11 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.3rem;
+    cursor: pointer;
 }
 
 .burger span{
-    display: block;
+    display: flex;
     height: 3px;
     width: 100%;
     background-color: var(--neutral-color-light);
@@ -110,5 +111,9 @@
     .header{
         max-width: 1440px;
         margin: 0 auto;
+    }
+
+    .burger{
+        display: none;
     }
 }

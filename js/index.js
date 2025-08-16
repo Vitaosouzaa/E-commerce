@@ -1,8 +1,8 @@
-const openMenu = document.querySelector(".main-menu");
+const openMenu = document.getElementByTagName("button");
 
-function openBurger(menu) {
-    menu.addEventListner("click", (e) => {
-        const burger = menu.parentElement;
+function openBurger(burger) {
+    burger.addEventListner("click", (e) => {
+        const burger = burger.parentElement;
         burger.classList.toggle('open');
     })
 }
