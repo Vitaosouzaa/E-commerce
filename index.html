@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart-modal.css">
 
 </head>
 
@@ -174,89 +175,89 @@
         </div>
     </footer>
 
-    <!-- <div id="modal-1" class="modal" aria-hidden="true">
+    <div id="modal-1" class="modal" aria-hidden="true">
         <div tabindex="-1" data-micromodal-close>
-            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                 <header>
                     <h2 id="modal-1-title">
                         Carrinho de Compras
                     </h2>
-                    <button aria-label="Close modal" data-micromodal-close></button>
+                    <button class="close" aria-label="Close modal" data-micromodal-close></button>
                 </header>
 
                 <div id="modal-1-content">
                     <table>
                         <thead>
                             <tr>
-                                <th>Produtos</th>
+                                <th class="th-product">Produtos</th>
                                 <th>Descrição</th>
                                 <th>Preço</th>
                                 <th>Quantidade</th>
-                                <th>Total</th>
+                                <th class="th-total">Total</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="./assets/images/xbox.jpeg" alt="Xbox X Series"></td>
+                                <td class="td-product"><img src="./assets/images/xbox.jpeg" alt="Xbox X Series"></td>
                                 <td>Xbox X Series</td>
-                                <td>R$ 4.599,00</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 4.599,00</td>
-                                <td><button id="deletar">Deletar</button></td>
+                                <td class="td-unitary-price">R$ 4.599,00</td>
+                                <td class="td-quantity"><input type="number" value="1" min="1"></td>
+                                <td class="td-price-total">R$ 4.599,00</td>
+                                <td><button id="deletar" class="btn-delete"></button></td>
                             </tr>
                             <tr>
-                                <td><img src="./assets/images/fone.jpeg" alt="Headset Gamer SonicStorm 7.1"></td>
+                                <td class="td-product"><img src="./assets/images/fone.jpeg" alt="Headset Gamer SonicStorm 7.1"></td>
                                 <td>Headset Gamer SonicStorm 7.1</td>
-                                <td>R$ 349,90</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 349,90</td>
-                                <td><button id="deletar">Deletar</button></td>
+                                <td class="td-unitary-price">R$ 349,90</td>
+                                <td class="td-quantity"><input type="number" value="1" min="1"></td>
+                                <td class="td-price-total">R$ 349,90</td>
+                                <td><button id="deletar" class="btn-delete"></button></td>
                             </tr>
                             <tr>
-                                <td><img src="./assets/images/mouse.jpeg" alt="Mouse Gamer UltraClick RGB"></td>
+                                <td class="td-product"><img src="./assets/images/mouse.jpeg" alt="Mouse Gamer UltraClick RGB"></td>
                                 <td>Mouse Gamer UltraClick RGB</td>
-                                <td>R$ 189,00</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 189,00</td>
-                                <td><button id="deletar">Deletar</button></td>
+                                <td class="td-unitary-price">R$ 189,00</td>
+                                <td class="td-quantity"><input type="number" value="1" min="1"></td>
+                                <td class="td-price-total">R$ 189,00</td>
+                                <td><button id="deletar" class="btn-delete"></button></td>
                             </tr>
                             <tr>
-                                <td><img src="./assets/images/teclado.jpg" alt="Teclado Mecânico Red Switch Pro"></td>
+                                <td class="td-product"><img src="./assets/images/teclado.jpg" alt="Teclado Mecânico Red Switch Pro"></td>
                                 <td>Teclado Mecânico Red Switch Pro</td>
-                                <td>R$ 289,00</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 289,00</td>
-                                <td><button id="deletar">Deletar</button></td>
+                                <td class="td-unitary-price">R$ 289,00</td>
+                                <td class="td-quantity"><input type="number" value="1" min="1"></td>
+                                <td class="td-price-total">R$ 289,00</td>
+                                <td><button id="deletar" class="btn-delete"></button></td>
                             </tr>
                             <tr>
-                                <td><img src="./assets/images/monitor.jpg" alt="Monitor Gamer 27 165Hz 1ms"></td>
+                                <td class="td-product"><img src="./assets/images/monitor.jpg" alt="Monitor Gamer 27 165Hz 1ms"></td>
                                 <td>Monitor Gamer 27" 165Hz 1ms</td>
-                                <td>R$ 1.399,00</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 1.399,00</td>
-                                <td><button id="deletar">Deletar</button></td>
+                                <td class="td-unitary-price">R$ 1.399,00</td>
+                                <td class="td-quantity"><input type="number" value="1" min="1"></td>
+                                <td class="td-price-total">R$ 1.399,00</td>
+                                <td><button id="deletar" class="btn-delete"></button></td>
                             </tr>
                             <tr>
-                                <td><img src="./assets/images/notebook.jpg" alt="Notebook Gamer G-Fury i7 RTX 4060"></td>
+                                <td class="td-product"><img src="./assets/images/notebook.jpg" alt="Notebook Gamer G-Fury i7 RTX 4060"></td>
                                 <td>Notebook Gamer G-Fury i7 RTX 4060</td>
-                                <td>R$ 6.899,00</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 6.899,00</td>
-                                <td><button id="deletar">Deletar</button></td>
+                                <td class="td-unitary-price">R$ 6.899,00</td>
+                                <td class="td-quantity"><input type="number" value="1" min="1"></td>
+                                <td class="td-price-total">R$ 6.899,00</td>
+                                <td><button id="deletar" class="btn-delete"></button></td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <div>
-                        <span id="total-carrinho">Total: R$0,00</span>
-                        <button>Finalizar Compra</button>
+                    <div class="container-price">
+                        <span id="total-carrinho" class="total-cart">Total: R$0,00</span>
+                        <button class="finish-buy">Finalizar Compra</button>
                     </div>
                 </div>
 
             </div>
         </div>
-    </div> -->
+    </div>
 
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js
     "></script>
