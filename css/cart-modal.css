@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    display: block;
+    display: none;
 }
 
 .modal.is-open {
@@ -42,11 +42,16 @@
     display: none;
 }
 
-tbody th, tbody td {
+tbody td {
     padding: 0.8rem;
     vertical-align: middle;
     background-color: var(--second-color);
     color: var(--light-purple);
+    letter-spacing: 0.1rem;
+}
+
+tbody th {
+    padding: 0.8rem;
     letter-spacing: 0.1rem;
 }
 
@@ -89,7 +94,7 @@ td .btn-delete {
     margin-top: 3rem;
 }
 
-.total-cart1re {
+.total-cart {
     background-color: var(--second-color);
     width: 100%;
     padding: 1rem 0.5rem;
@@ -110,4 +115,68 @@ td .btn-delete {
 
 .finish-buy:hover {
     background-color: var(--color-hover);
+}
+
+@media(min-width: 769px){
+    .modal.is-open{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(00, 00, 00, 0.9);
+    }
+
+    .modal .container th{
+        background-color: var(--footer-color);
+    }
+    .modal .container{
+        max-width: 720px;
+        height: auto;
+        padding: 1.5rem;
+        margin: 0 auto;
+        background-color: var(--second-color);
+    }
+
+    .th-product, .th-total,
+    .td-product, .td-price-total{
+        display: table-cell;
+    }
+
+    .td-price-total{
+        white-space: nowrap;
+        font-size: 1rem;
+        font-weight: 300;
+        color: var(--neutral-color-light);
+    }
+
+    table{
+        border-collapse: collapse;
+    }
+
+    tbody td{
+        border: 2px solid var(--footer-color);
+    }
+
+    td img{
+        width: 48px;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .container-price{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .total-cart{
+        text-align: right;
+    }
+
+    .finish-buy{
+        width: 369px;
+    }
+
+    .td-quantity{
+        text-align: center;
+    }
 }
