@@ -26,7 +26,10 @@ buttomAddCart.forEach(button => {
             }
             cart.push(product);
         } 
-        saveProduct(cart);       
+        saveProduct(cart);  
+        uptadeCart(); 
+        renderTableCart();
+    
     })
 })
 
@@ -43,3 +46,45 @@ function getProduct(){
         return [];
     }
 }
+
+//atualizar o contador do carrinho de compras
+
+function uptadeCart() {
+    const cart = getProduct();
+    let total = 0;
+
+    cart.forEach(product => {
+        total += product.quantity;
+    })
+
+    document.getElementById('cartCount').textContent = total;    
+}
+
+uptadeCart();
+
+// renderizar a tabela do carrinho de compras
+
+function renderTableCart() {
+    const products = getProduct();
+    const tableBody = document.querySelector("#modal-1-content tbody");
+    tableBody.innerHTML = ""; //Limpa a tabela antes de renderizar
+
+    products.forEach(product => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td class="td-product">
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+            />
+            </td>
+            <td>${product.name}</td>
+            <td class="td-unitary-price">R$ ${product.price.toFixed(2).replace(".", ",")}</td>
+            <td class="td-quantity"><input type="number" value="${product.quantity}" min="1"></td>
+            <td class="td-price-total">R$ ${product.price.toFixed(2).replace(".", ",")}</td>
+            <td><button id="deletar" data-id="${product.id} class="btn-delete"></button></td>`;
+        tableBody.appendChild(tr);
+    });
+}
+
+renderTableCart();
