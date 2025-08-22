@@ -107,7 +107,7 @@
     }
 
     .burger{
-        display: none;
+        display: flex;
     }
 
     .header .main-menu ul{
