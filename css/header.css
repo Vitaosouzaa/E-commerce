@@ -20,14 +20,14 @@
     padding: 1rem 0;
 }
 
-.header .main-menu ul li a{
+.header ul li a{
     color: var(--neutral-color-light);
     letter-spacing: 0.1rem;
     text-decoration: none;
     padding: 1rem;
 }
 
-.header .main-menu ul li a:hover{
+.header ul li a:hover{
     transition: ease-in 0.5s;
     transform: scale(1.3);
     background-color: var(--color-hover);
@@ -35,6 +35,10 @@
 
 .header.active-menu .main-menu{
     display: block;
+    background-color: var(--second-color);
+    max-width: 40vw;
+    height: 50vh;
+    margin-top: 1rem;
 }
 
 .header-content{
@@ -60,11 +64,12 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.3rem;
+    margin-bottom: 3rem;
     cursor: pointer;
 }
 
 .burger span{
-    display: flex;
+    display: block;
     height: 3px;
     width: 100%;
     background-color: var(--neutral-color-light);
@@ -107,7 +112,7 @@
     }
 
     .burger{
-        display: flex;
+        display: none;
     }
 
     .header .main-menu ul{

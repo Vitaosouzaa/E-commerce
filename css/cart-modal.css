@@ -184,4 +184,23 @@ td .btn-delete {
     .td-quantity{
         text-align: center;
     }
+
+    #modal-1-content table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #modal-1-content table thead,
+    #modal-1-content table tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed; 
+    }
+
+    #modal-1-content table tbody {
+        display: block;
+        max-height: calc(6 * 4rem); 
+        overflow-y: auto;
+    }
 }
