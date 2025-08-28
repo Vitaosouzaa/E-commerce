@@ -124,7 +124,6 @@ function updateTotalPrice(){
     document.querySelector('#total-carrinho').textContent = `Total: R$ ${totalPrice.toFixed(2).replace(".", ",")}`;
 }
 
-
 function updateAll() {
     updateCart();
     updateTotalPrice();
