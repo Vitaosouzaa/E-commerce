@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart-modal.css">
@@ -59,148 +60,171 @@
     </header>
 
     <main>
+        <section class="container">
+            <nav class="filter">
+                <div class="category">
+                    <label for="categoria">Categoria</label>
+                    <select id="category" class="category-products">
+                        <option value="all">Todas</option>
+                        <option value="Games & Consoles">Games & Consoles</option>
+                        <option value="Acessórios Gamer">Acessórios Gamer</option>
+                        <option value="Periféricos">Periféricos</option>
+                        <option value="Notebooks">Notebooks</option>
+                        <option value="Móveis">Móveis</option>
+                        <option value="Jogos">Jogos</option>
+                    </select>
+                </div>
+                <div class="product-price">
+                    <label for="preco">Preço máximo</label>
+                    <input type="text" id="price" class="all-price-product" placeholder="R$ 0,00" min="0">
+                </div>
+
+                <button class="filter-button">Aplicar Filtro</button>
+            </nav>
+        </section>
+
         <section class="products">
             <h2>Produtos</h2>
             <ul>
-                <li class="product" data-id="xbox">
+                <li class="product" data-id="xbox" data-categoria="Games & Consoles" data-preco="4599">
                     <figure>
                         <img src="./assets/images/xbox.jpeg" alt="xbox X Series">
                         <figcaption class="name">Xbox X Series</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Games & Consoles</strong></span>
+                        <span class="categoria"><strong>Categoria: Games & Consoles</strong></span>
                         <span><strong>Descrição: Console de nova geração com 1TB SSD, 4K e 120FPS</strong></span>
                         <span class="price">R$ 4.599,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
-                <li class="product" data-id="headset">
+                <li class="product" data-id="headset" data-categoria="Acessórios Gamer" data-preco="349">
                     <figure>
                         <img src="./assets/images/fone.jpeg" alt="Headset Gamer SonicStorm 7.1">
                         <figcaption class="name">Headset Gamer SonicStorm 7.1</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Acessórios Gamer</strong></span>
+                        <span class="categoria"><strong>Categoria: Acessórios Gamer</strong></span>
                         <span><strong>Descrição: Áudio surround, microfone removível e iluminação RGB</strong></span>
                         <span class="price">R$ 349,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="mouse">
+                <li class="product" data-id="mouse" data-categoria="Periféricos" data-preco="189">
                     <figure>
                         <img src="./assets/images/mouse.jpeg" alt="Mouse Gamer UltraClick RGB">
                         <figcaption class="name">Mouse Gamer UltraClick RGB</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Periféricos</strong></span>
+                        <span class="categoria"><strong>Categoria: Periféricos</strong></span>
                         <span><strong>Descrição: 12.000 DPI, 7 botões programáveis e iluminação ajustável</strong></span>
                         <span class="price">R$ 189,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="teclado">
+                <li class="product" data-id="teclado" data-categoria="Periféricos" data-preco="289">
                     <figure>
                         <img src="./assets/images/teclado.jpg" alt="Teclado Mecânico Red Switch Pro">
                         <figcaption class="name">Teclado Mecânico Red Switch Pro</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Periféricos</strong></span>
+                        <span class="categoria"><strong>Categoria: Periféricos</strong></span>
                         <span><strong>Descrição: Teclado mecânico com switches vermelhos e keycaps em PBT</strong></span>
                         <span class="price">R$ 289,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="monitor">
+                <li class="product" data-id="monitor" data-categoria="Acessórios Gamer" data-preco="1399">
                     <figure>
                         <img src="./assets/images/monitor.jpg" alt="Monitor Gamer 27 165Hz 1ms">
                         <figcaption class="name">Monitor Gamer 27" 165Hz 1ms</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Acessórios Gamer</strong></span>
+                        <span class="categoria"><strong>Categoria: Acessórios Gamer</strong></span>
                         <span><strong>Descrição: Painel IPS, resolução Full HD, ideal para FPS e MOBA</strong></span>
                         <span class="price">R$ 1.399,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="notebook">
+                <li class="product" data-id="notebook" data-categoria="Notebooks" data-preco="6899">
                     <figure>
                         <img src="./assets/images/notebook.jpg" alt="Notebook Gamer G-Fury i7 RTX 4060">
                         <figcaption class="name">Notebook Gamer G-Fury i7 RTX 4060</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Notebooks</strong></span>
+                        <span class="categoria"><strong>Categoria: Notebooks</strong></span>
                         <span><strong>Descrição: Tela 144Hz, 16GB RAM, SSD 1TB, ideal para jogos AAA</strong></span>
                         <span class="price">R$ 6.899,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="controle">
+                <li class="product" data-id="controle" data-categoria="Periféricos" data-preco="249">
                     <figure>
                         <img src="./assets/images/controle.jpg" alt="Controle Wireless ShadowGrip">
                         <figcaption class="name">Controle Wireless ShadowGrip</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Periféricos</strong></span>
+                        <span class="categoria"><strong>Categoria: Periféricos</strong></span>
                         <span><strong>Descrição: Compatível com PC, Android e Consoles, com vibração e grip ergonômico.</strong></span>
                         <span class="price">R$ 249,90</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="placaVideo">
+                <li class="product" data-id="placaVideo" data-categoria="Periféricos" data-preco="2499">
                     <figure>
                         <img src="./assets/images/placa de video.png" alt="Placa de Vídeo RTX 4060 Ti 8GB">
                         <figcaption class="name">Placa de Vídeo RTX 4060 Ti 8GB</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Periféricos</strong></span>
+                        <span class="categoria"><strong>Categoria: Periféricos</strong></span>
                         <span><strong>Descrição: Alta performance em jogos e tarefas de IA.</strong></span>
                         <span class="price">R$ 2.499,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="webcam">
+                <li class="product" data-id="webcam" data-categoria="Periféricos" data-preco="179">
                     <figure>
                         <img src="./assets/images/webcam.webp" alt="Webcam Full HD 1080p Wide Angle">
                         <figcaption class="name">Webcam Full HD 1080p Wide Angle</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Periféricos</strong></span>
+                        <span class="categoria"><strong>Categoria: Periféricos</strong></span>
                         <span><strong>Descrição: Ideal para streamers e reuniões, com microfone embutido.</strong></span>
                         <span class="price">R$ 179,90</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="cadeira">
+                <li class="product" data-id="cadeira" data-categoria="Móveis" data-preco="999">
                     <figure>
                         <img src="./assets/images/cadeira.webp" alt="Cadeira Gamer Thunder Pro">
                         <figcaption class="name">Cadeira Gamer Thunder Pro</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Móveis</strong></span>
+                        <span class="categoria"><strong>Categoria: Móveis</strong></span>
                         <span><strong>Descrição: Reclinável 180º, apoio lombar, e acabamento em couro sintético.</strong></span>
                         <span class="price">R$ 999,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
-                <li class="product" data-id="jogo">
+                <li class="product" data-id="jogo" data-categoria="Jogos" data-preco="299">
                     <figure>
                         <img src="./assets/images/cyerpunk_2077.webp" alt="Jogo CyberPunk">
-                        <figcaption class="name">Jogo "CyberVoid 2077 - Deluxe"</figcaption>
+                        <figcaption class="name">Jogo "CyberPunk 2077 - Deluxe"</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Jogos</strong></span>
+                        <span class="categoria"><strong>Categoria: Jogos</strong></span>
                         <span><strong>Descrição: RPG de ação em mundo aberto com edição de colecionador.</strong></span>
                         <span class="price">R$ 299,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 </li>
 
-                <li class="product" data-id="ssd">
+                <li class="product" data-id="ssd" data-categoria="Periféricos" data-preco="449">
                     <figure>
                         <img src="./assets/images/ssd.png" alt="SSD NVMe 1TB Gen4">
                         <figcaption class="name">SSD NVMe 1TB Gen4</figcaption>
                     </figure>
                     <div class="information">
-                        <span><strong>Categoria: Periféricos</strong></span>
+                        <span class="categoria"><strong>Categoria: Periféricos</strong></span>
                         <span><strong>Descrição: Velocidade de leitura de até 5.000 MB/s para carregamento ultra-rápido.</strong></span>
                         <span class="price">R$ 449,00</span>
                         <button class="add-to-cart">Adicionar ao Carrinho</button>
@@ -244,7 +268,7 @@
         </div>
 
         <div class="copyright">
-            <p>@2024 - Todos os direitos reservados</p>
+            <p>@2025 - Todos os direitos reservados</p>
         </div>
     </footer>
 
@@ -385,6 +409,7 @@
 
     <script src="js/modal.js"></script>
     <script src="js/burgerMenu.js"></script>
+    <script src="js/filter.js"></script>
     <script src="js/index.js"></script>
 </body>
 
