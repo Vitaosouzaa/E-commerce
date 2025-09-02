@@ -122,6 +122,93 @@ td .btn-delete {
     background-color: var(--color-hover);
 }
 
+.container-total-price{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#subtotal, #freight-value{
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#freight-value{
+    display: none;
+}
+
+#subtotal .value, #freight-value .value {
+    color: #6affb7;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+#total-carrinho{
+    color: #6affb7;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    display: block;
+    text-align: right;
+}
+
+#input-zipcode{
+    padding: 0.5rem 0.8rem;
+    width: 100%;
+    max-width: 220px;
+    border: 1px solid #6affb7;
+    border-radius: 6px;
+    background: transparent;
+    color: #6affb7;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#input-zipcode::placeholder{
+    color: #6affb7;
+    opacity: 0.5;
+    font-weight: 400;
+}
+
+#calculate-freight{
+    padding: 0.5rem 1.25rem;
+    border: 1px solid #6affb7;
+    border-radius: 6px;
+    background: transparent;
+    color: #6affb7;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+
+#calculate-freight:hover,
+#calculate-freight:focus{
+    background: #6affb7;
+    color: #1a1a2e;
+}
+
+.container-zipcode-freight{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    gap: 0.5rem;
+}
+
+.container-zipcode-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
 @media(min-width: 769px){
     .modal.is-open{
         display: flex;

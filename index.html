@@ -396,7 +396,25 @@
                     </table>
 
                     <div class="container-price">
-                        <span id="total-carrinho" class="total-cart">Total: R$0,00</span>
+                        <div class="container-zipcode-freight">
+                            <label for="cep" class="zipcode">Calcular Frete: </label>
+                            <div class="container-zipcode-inputs">
+                                <input type="text" id="input-zipcode" placeholder="Digite seu CEP" />
+                                <button id="calculate-freight">Calcular Frete</button>
+                            </div>
+                        </div>
+
+                        <div class="container-total-price">
+                            <span id="subtotal">Subtotal dos pedidos: 
+                                <span class="value">R$ 10,00</span>
+                            </span>
+                            <span id="freight-value">Valor do Frete: 
+                                <span class="value">108</span>
+                            </span>
+                            <span id="total-carrinho" class="total-cart">Total: R$0,00</span>
+                        </div>
+
+                        
                         <button class="finish-buy">Finalizar Compra</button>
                     </div>
                 </div>
