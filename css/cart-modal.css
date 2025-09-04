@@ -140,11 +140,14 @@ td .btn-delete {
 #freight-value{
     display: flex;
 }
-#freight-value .value{
+
+#freight-value .value {
     color: #6affb7;
+    font-weight: 500;
+    margin-left: 0.5rem;
 }
 
-#subtotal .value, #freight-value .value {
+#subtotal .value{
     color: #6affb7;
     font-weight: 500;
     margin-left: 0.5rem;
