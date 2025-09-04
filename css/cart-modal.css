@@ -138,7 +138,10 @@ td .btn-delete {
 }
 
 #freight-value{
-    display: none;
+    display: flex;
+}
+#freight-value .value{
+    color: #6affb7;
 }
 
 #subtotal .value, #freight-value .value {
@@ -174,6 +177,13 @@ td .btn-delete {
     color: #6affb7;
     opacity: 0.5;
     font-weight: 400;
+}
+
+.error{
+    color: #ff0000;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    display: none;
 }
 
 #calculate-freight{

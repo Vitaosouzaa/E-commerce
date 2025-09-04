@@ -122,6 +122,7 @@ function updateTotalPrice(){
     });
 
     document.querySelector('#total-carrinho').textContent = `Total: R$ ${totalPrice.toFixed(2).replace(".", ",")}`;
+    document.querySelector("#subtotal .value").textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
 }
 
 function updateAll() {
@@ -131,3 +132,117 @@ function updateAll() {
 }
 
 updateAll();
+
+async function freightCalculate(zipcode) {
+    calculateFreight.disabled = true;
+    const originalTextButton = calculateFreight.textContent;
+    calculateFreight.textContent = "Calculando frete...";
+
+    const url = 'http://localhost:5678/webhook/0ed9fca0-65b8-4d66-b50d-de5f718936fd';
+    try {
+        console.log('Iniciando cálculo de frete para o CEP:', zipcode);
+
+        const medidasResponse = await fetch('./js/medidas.json');
+        if (!medidasResponse.ok) {
+            throw new Error(`Erro ao carregar medidas.json: ${medidasResponse.status}`);
+        }
+        const medidas = await medidasResponse.json();
+        console.log('Medidas carregadas:', medidas);
+
+        const cart = getProduct();
+        console.log('Produtos no carrinho:', cart);
+
+        const products = cart.map(product => {
+            const medida = medidas.find(m => m.id === product.id);
+            return {
+                quantity: product.quantity,
+                height: medida ? medida.height : 4,
+                length: medida ? medida.length : 30,
+                width: medida ? medida.width : 25,
+                weight: medida ? medida.weight : 0.25
+            };
+        });
+        console.log('Dados dos produtos para envio:', products);
+
+        const resposta = await fetch(url, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ zipcode, products })
+        });
+
+        console.log('Status da resposta da API:', resposta.status);
+
+        if (!resposta.ok) {
+            throw new Error(`Erro na API de frete: ${resposta.status}`);
+        }
+
+        const resultado = await resposta.json();
+        console.log('Resposta completa da API:', resultado);
+
+        // Extraindo o valor correto do frete
+        if (!resultado || typeof resultado.price !== 'number') {
+            console.error('Resposta inválida da API:', resultado);
+            throw new Error('Resposta da API não contém a propriedade "price" ou ela não é um número.');
+        }
+
+        return resultado.price; // Usando a propriedade "price" como valor do frete
+    } catch (erro) {
+        console.error('Erro ao calcular frete:', erro);
+        return null;
+    } finally {
+        calculateFreight.disabled = false;
+        calculateFreight.textContent = originalTextButton;
+    }
+}
+
+const calculateFreight = document.getElementById('calculate-freight');
+const inputZipcode = document.getElementById('input-zipcode');
+const freightValue = document.getElementById('freight-value');
+
+inputZipcode.addEventListener("keydown", () => {
+    if (event.key === "Enter") {
+        calculateFreight.click();
+    };
+});
+
+calculateFreight.addEventListener('click', async () => {
+    const zipcode = inputZipcode.value.trim();
+    
+    const errorZipCode = document.querySelector(".error");
+    if (!zipcodeValidate(zipcode)) {
+        errorZipCode.textContent = "CEP inválido";
+        errorZipCode.style.display = "block";
+        return;
+    }
+
+    const freightValue = await freightCalculate(zipcode);
+    if (freightValue === null || isNaN(freightValue)) {
+        errorZipCode.textContent = "Erro ao calcular frete";
+        errorZipCode.style.display = "block";
+        return;
+    }
+
+    const formatedPrice = freightValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('freight-value').textContent = `Valor do Frete: ${formatedPrice}`;
+
+    const cartTotal = document.getElementById("total-carrinho");
+    const totalValueText = cartTotal.textContent.replace("Total: R$ ", "").replace(/\./g, "").replace(",", ".");
+    const totalValue = parseFloat(totalValueText);
+
+    if (isNaN(totalValue)) {
+        console.error("Erro: Total do carrinho não é um número válido.");
+        return;
+    }
+
+    const totalWithFreight = totalValue + freightValue;
+    const totalFormated = totalWithFreight.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    cartTotal.textContent = `Total: ${totalFormated}`;
+});
+
+
+function zipcodeValidate(zipcode){
+    const regexCep = /^[0-9]{5}-?[0-9]{3}$/;
+	return regexCep.test(zipcode);
+}

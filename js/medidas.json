@@ -1,0 +1,98 @@
+[
+    {
+        "id": "xbox",
+        "quantity": 1,
+        "height": 15,
+        "length": 30,
+        "width": 15,
+        "weight": 5
+    },
+    {
+        "id": "headset",
+        "quantity": 1,
+        "height": 20,
+        "length": 22,
+        "width": 10,
+        "weight": 0.5
+    },
+    {
+        "id": "mouse",
+        "quantity": 1,
+        "height": 7,
+        "length": 13,
+        "width": 4,
+        "weight": 0.2
+    },
+    {
+        "id": "teclado",
+        "quantity": 1,
+        "height": 14,
+        "length": 44,
+        "width": 5,
+        "weight": 1
+    },
+    {
+        "id": "monitor",
+        "quantity": 1,
+        "height": 36,
+        "length": 61,
+        "width": 20,
+        "weight": 6
+    },
+    {
+        "id": "notebook",
+        "quantity": 1,
+        "height": 25,
+        "length": 36,
+        "width": 3,
+        "weight": 2
+    },
+    {
+        "id": "controle",
+        "quantity": 1,
+        "height": 11,
+        "length": 15,
+        "width": 6,
+        "weight": 0.3
+    },
+    {
+        "id": "placaVideo",
+        "quantity": 1,
+        "height": 12,
+        "length": 28,
+        "width": 5,
+        "weight": 1
+    },
+    {
+        "id": "webcam",
+        "quantity": 1,
+        "height": 5,
+        "length": 10,
+        "width": 5,
+        "weight": 0.1
+    },
+    {
+        "id": "cadeira",
+        "quantity": 1,
+        "height": 80,
+        "length": 60,
+        "width": 50,
+        "weight": 5
+    },
+    {
+        "id": "jogo",
+        "quantity": 1,
+        "height": 14,
+        "length": 17,
+        "width": 2,
+        "weight": 0.25
+    },
+    {
+        "id": "ssd",
+        "quantity": 1,
+        "height": 2,
+        "length": 8,
+        "width": 1,
+        "weight": 0.05
+    }
+]
